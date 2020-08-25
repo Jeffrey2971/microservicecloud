@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 子类里显示声明才有明确的集成表现，月就是弗雷德默认版本，否则为自己定义 -->
+    <parent>
+        <artifactId>microservicecloud</artifactId>
+        <groupId>com.jeffrey.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 当前自己的 Module 名称 -->
+    <artifactId>microservicecloud-api</artifactId>
+
+    <!--
+    当前 Module 需要用到的 jar 包，按照项目需求添加，如果父类已经包含了则可以不用填写版本号
+    以 Java 多态的例子来讲就是 public class microservicecloud-api extends microservicecloud()
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>
