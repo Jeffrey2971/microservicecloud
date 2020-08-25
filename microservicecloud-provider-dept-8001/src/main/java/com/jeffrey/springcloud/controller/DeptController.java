@@ -13,8 +13,10 @@ public class DeptController {
     @Autowired
     private DeptService service;
 
+
     @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
     public boolean add(@RequestBody Dept dept) {
+        System.out.println("============");
         return service.add(dept);
     }
 
@@ -24,7 +26,7 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
-    public List<Dept> list(){
+    public List<Dept> list() {
         return service.list();
     }
 }
