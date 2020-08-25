@@ -13,7 +13,7 @@ public interface DeptDao {
      * 添加部门
      * @return
      */
-    public boolean addDept();
+    public boolean addDept(Dept dept);
 
     /**
      * 查找一个用户
