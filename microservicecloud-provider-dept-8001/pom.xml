@@ -2,14 +2,93 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 父工程 -->
     <parent>
         <artifactId>microservicecloud</artifactId>
         <groupId>com.jeffrey.springcloud</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+    <!-- 模块版本 -->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 当前自己的 Module 名称 -->
     <artifactId>microservicecloud-provider-dept-8001</artifactId>
+
+    <dependencies>
+
+        <!-- 引入自定义的 api 通用包，可以直接使用 Dept 部门的 Entity -->
+        <dependency>
+            <groupId>com.jeffrey.springcloud</groupId>
+            <artifactId>microservicecloud-api</artifactId>
+            <!-- maven中的${project.groupId} 和 ${project.version} 表示当前项目的groupId和版本 -->
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- 测试单元组件 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mysql 驱动组件 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- 阿里巴巴 druid 连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
+        <!-- 日志组件 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+
+        <!-- mybatis 框架组件 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- springboot 内嵌容器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+        </dependency>
+
+        <!-- spring web 组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!-- 热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+        </dependency>
+
+
+
+    </dependencies>
 
 
 </project>
