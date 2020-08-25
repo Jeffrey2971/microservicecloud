@@ -34,6 +34,5 @@ public class Dept implements Serializable {
         Dept dept = new Dept();
         dept.setDeptno(11L).setDname("RD").setDb_source("db01");
         System.out.println(dept);
-
     }
 }
