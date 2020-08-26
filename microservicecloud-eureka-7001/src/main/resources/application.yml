@@ -8,9 +8,11 @@ eureka:
     # eureka 服务器的实例名称
     hostname: localhost
   client:
-    # false 表示不向注册中心注册自己
+    # false 表示不向注册中心注册自己，例如一个物业公司并不需要将自己注册进物业公司
     register-with-eureka: false
-    # false 表示自己就是注册中心，只负责维护服务实例，并不检索服务
+    # false 表示自己就是注册中心，只负责维护服务实例，并不检索服务，例如物业公司中的信息并不会将自己的信息注册进花名册内
     fetch-registry: false
     # 设置与 EurekaServer 交互的地址查询服务和注册服务都需要依赖这个地址
-    service-url: http://${eureka.instance.hostname}:${server.port}/eureka/
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
