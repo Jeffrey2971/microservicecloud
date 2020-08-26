@@ -13,6 +13,7 @@
         <module>microservicecloud-api</module>
         <module>microservicecloud-provider-dept-8001</module>
         <module>microservicecloud-consumer-dept-80</module>
+        <module>microservicecloud-eureka-7001</module>
     </modules>
 
     <properties>
@@ -29,6 +30,8 @@
         <lombok.version>1.16.18</lombok.version>
 
         <mysql.version>5.1.45</mysql.version>
+
+        <eureka.version>2.2.4</eureka.version>
     </properties>
 
     <dependencyManagement>
