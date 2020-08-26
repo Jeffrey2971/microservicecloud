@@ -14,18 +14,18 @@ public class DeptController {
     private DeptService service;
 
 
-    @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
+    @PostMapping(value = "/dept/add")
     public boolean add(@RequestBody Dept dept) {
         System.out.println("============");
         return service.add(dept);
     }
 
-    @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/dept/get/{id}")
     public Dept get(@PathVariable("id") Long id) {
         return service.get(id);
     }
 
-    @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
+    @GetMapping(value = "/dept/list")
     public List<Dept> list() {
         return service.list();
     }
