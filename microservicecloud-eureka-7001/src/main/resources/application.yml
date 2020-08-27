@@ -16,4 +16,6 @@ eureka:
     service-url:
       # http://localhost:7001/eureka/
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
+  # 禁用 eurekaServer 的自我保护机制
+  server:
+    enable-self-preservation: false
