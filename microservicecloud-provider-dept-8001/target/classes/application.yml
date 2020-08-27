@@ -1,0 +1,44 @@
+server:
+  port: 8001
+
+# mybatis 配置
+mybatis:
+  # mybatis 配置文件的所在类路径
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  # 所有 entity 别名类所在包
+  type-aliases-package: com.jeffrey.springcloud.entitys
+  # mapper 映射文件
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
+# spring 配置
+spring:
+  application:
+    name: microservicecloud-dept
+  # 配置连接信息
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql 驱动包
+    driver-class-name: com.mysql.jdbc.Driver
+    # 连接数据库
+    url: jdbc:mysql://localhost:3306/cloudDB01
+    # 用户名
+    username: root
+    # 密码
+    password: Aa664490254
+    dbcp2:
+      # 数据库连接池最小维持连接数
+      min-idle: 5
+      # 初始化连接数
+      initial-size: 5
+      # 最大连接数
+      max-total: 5
+      # 等待连接获取的最大超时时间
+      max-wait-millis: 200
+
+# 将服务提供者注册进 eureka 注册中心
+eureka:
+  client:
+    service-url:
+      # 将客户端注册进 eureka 服务列表内
+      defaultZone: http://localhost:7001/eureka

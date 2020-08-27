@@ -35,3 +35,10 @@ spring:
       max-total: 5
       # 等待连接获取的最大超时时间
       max-wait-millis: 200
+
+# 将服务提供者注册进 eureka 注册中心
+eureka:
+  client:
+    service-url:
+      # 将客户端注册进 eureka 服务列表内
+      defaultZone: http://localhost:7001/eureka
