@@ -88,9 +88,34 @@
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <!-- 最终工程名称 -->
+        <finalName>microservicecloud</finalName>
+        <resources>
+            <!-- 允许 src/main/resources 中的所有配置资源 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- 允许 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <!-- 负责解析解读 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <delimiters>
+                        <!-- 在 src/main/resources 路径下的配置文件，以 $ 开头和结尾的将被读取 -->
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
